@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@600&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Exo', sans-serif;
+            background: #fdf6e3;
+            color: #333;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: url('https://wallpapers.com/images/hd/brown-aesthetic-background-k583ryuw6p8lrv3i.jpg') no-repeat center/cover;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: #8d5524;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .navbar-links li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .navbar-links li a:hover {
+            background: #c6854b;
+        }
+
+        /* Sections */
+        .section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        /* About Me Section */
+        #about-me {
+            background: linear-gradient(135deg, #fdf6e3, #c6854b);
+            color: #fff;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #about-me h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        #about-me p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .skill-item {
+            background: #8d5524;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .skill-item:hover {
+            transform: scale(1.1);
+            background: #c6854b;
+        }
+
+        .languages-section {
+            margin-top: 30px;
+            font-size: 1.2rem;
+        }
+
+        .languages-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .languages-section li {
+            margin: 10px 0;
+            color: #333;
+        }
+
+        /* Projects Section */
+        .projects-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .project-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .project-hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .project-item:hover .project-hover {
+            opacity: 1;
+        }
+
+        /* Resume Section */
+        .resume-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .resume-thumbnail {
+            width: 150px;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .resume-thumbnail:hover {
+            transform: scale(1.1);
+        }
+
+        .resume-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .preview-button,
+        .resume-button {
+            background: #8d5524;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .preview-button:hover,
+        .resume-button:hover {
+            background: #c6854b;
+        }
+
+        /* Footer */
+        .footer {
+            background: #8d5524;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="hero-section">
+        <h1>Laiba Tabassum</h1>
+        <p>Creative Thinker | Lifelong Learner | Content Creator</p>
+    </header>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul class="navbar-links">
+            <li><a href="#about-me">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#resume">Resume</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Me Section -->
+    <section id="about-me" class="section">
+        <h2>About Me</h2>
+        <p>
+            Hello! I'm Laiba Tabassum, a media studies major with a deep passion for the beauty and cosmetics industry.
+            I am skilled in building meaningful connections with clients, offering personalized product recommendations,
+            and staying ahead of emerging beauty trends. My experience includes roles as a beauty advisor and counter
+            staff, where I honed my expertise in customer service, sales, and visual merchandising. I'm fluent in
+            English, Urdu, Hindi, and Punjabi, enabling me to connect with diverse audiences and foster inclusivity.
+        </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-item">Product Knowledge</div>
+            <div class="skill-item">Sales & Clienteling</div>
+            <div class="skill-item">Communication</div>
+            <div class="skill-item">Organization</div>
+            <div class="skill-item">Technical Proficiency</div>
+            <div class="skill-item">Makeup Applications</div>
+        </div>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            <div class="projects-gallery">
+                <div class="project-item">
+                    <img src="LAIBA_POSTER2.jpg" loading="lazy" alt="Project 1">
+                    <div class="project-hover">
+                        <p>Movie Poster</p>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <img src="poster copy.jpg" loading="lazy" alt="Project 2">
+                    <div class="project-hover">
+                        <p>Fashion Poster</p>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <img src="poster3.jpg" loading="lazy" alt="Project 3">
+                    <div class="project-hover">
+                        <p>Illustrator Poster</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume Section -->
+        <section id="resume" class="section">
+            <h2>My Resume</h2>
+            <div class="resume-container">
+                <img class="resume-thumbnail" src="LaibaTabassum_Resume.jpg" alt="Resume Thumbnail">
+                <div class="resume-actions">
+                    <a class="preview-button" href="LaibaTabassum_Resume.jpg" target="_blank">Preview</a>
+                    <a class="resume-button" href="LaibaTabassum_Resume.jpg" download>Download My
+                        Resume</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Laiba Tabassum. Designed with ❤️.</p>
+        </footer>
+</body>
+
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul class="navbar-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <!-- Landing Section -->
+    <section class="landing" id="landing">
+        <h1>Welcome to My Page</h1>
+        <p>Laiba Tabassum</p>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form">
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Write your message" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Laiba Tabassum. Bringing dreams to life with ❤️.</p>
+    </footer>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Exo', 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f6d7b3, #d4a476);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            font-family: 'Exo', 'Arial', sans-serif;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(139, 94, 52, 0.9);
+            padding: 15px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            text-align: center;
+        }
+
+        .navbar-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+        }
+
+        .navbar-links li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        .navbar-links a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar-links a:hover {
+            color: #f8efd4;
+        }
+
+        .landing {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            position: relative;
+            color: #fff;
+            animation: cycleBackgrounds 16s infinite linear;
+            background-size: cover;
+        }
+
+        .landing h1 {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            animation: fadeInDown 1.5s ease-in-out;
+        }
+
+        .landing p {
+            font-size: 1.5rem;
+            max-width: 700px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            max-width: 650px;
+            margin: 50px auto;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+
+        .contact-form h2 {
+            text-align: center;
+            color: #8b5e34;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin: 20px 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #5a3e2b;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+
+        input:focus,
+        textarea:focus {
+            border: 1px solid #8b5e34;
+            outline: none;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: #8b5e34;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #5a3e2b;
+        }
+
+        .footer {
+            background: #8b5e34;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes cycleBackgrounds {
+            0% {
+                background-image: url('https://images.unsplash.com/photo-1596486932489-f631d4ccceaa?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJyb3duJTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D');
+            }
+
+            25% {
+                background-image: url('https://t3.ftcdn.net/jpg/07/65/38/38/360_F_765383892_Ii9f4a3VFvcfCuEqVJRHCVVBeR2Z73Io.jpg');
+            }
+
+            50% {
+                background-image: url('https://media.istockphoto.com/id/1224038563/vector/abstract-brown-background-geometric-texture.jpg?s=612x612&w=0&k=20&c=PVbh7RMUlnEeAp1bGfDcl12p8C9GKggfqvxM2iDDKPw=');
+            }
+
+            75% {
+                background-image: url('https://static.vecteezy.com/system/resources/previews/030/663/468/non_2x/brown-background-high-quality-free-photo.jpg');
+            }
+
+            100% {
+                background-image: url('https://images.unsplash.com/photo-1596486932489-f631d4ccceaa?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJyb3duJTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D');
+            }
+        }
+    </style>
+</body>
+
+</html>

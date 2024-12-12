@@ -1,0 +1,142 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Exo', 'Arial', sans-serif;
+    background: #fdf6e3;
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1.2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero Section */
+.hero-section {
+    background: url('https://wallpapers.com/images/hd/brown-aesthetic-background-k583ryuw6p8lrv3i.jpg') no-repeat center/cover;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #5c393a;
+    text-align: center;
+}
+
+/* Navbar */
+.navbar {
+    background: #8d5524;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 20px;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    font-family: 'Exo', 'Arial', sans-serif;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.navbar-links li a:hover {
+    background: #c6854b;
+}
+
+/* Sections */
+.section {
+    font-family: 'Exo', 'Arial', sans-serif;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Projects Section */
+.projects-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.project-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.project-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.project-item:hover .project-hover {
+    opacity: 1;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.skill-item {
+    background: #c6854b;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+.footer {
+    background: #8d5524;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    margin-top: 20px;
+}
